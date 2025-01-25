@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions légales{% endblock %}
+
+{% block body %}
+    <section class="py-5 mt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <h2 class="h2 fw-bold border-bottom mb-5">Mentions légales</h2>
+                <div class="col">
+                    {{ settings.siteMentions|raw }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

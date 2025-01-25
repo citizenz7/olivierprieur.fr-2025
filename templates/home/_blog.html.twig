@@ -1,0 +1,24 @@
+<section id="blog" class="container-fluid bg-light py-5">
+    <div class="container">
+        <h2 class="h2 fw-bold border-bottom">Blog</h2>
+        <h3 class="h6">Derniers articles du flux RSS de <a href="https://www.citizenz.info" target="_blank">citizenz.info</a></h3>
+        <p class="mb-5">Blog Geek & Libre : Développement web, admin systèmes et serveurs, base de données, Docker, etc.</p>
+        <div class="row row-cols-1 row-cols-md-5 g-2">
+            {% for article in articles %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="h6 fw-bold text-center">
+                                <a href="{{ article.link }}" class="text-decoration-none text-reset">{{ article.title }}</a>
+                            </h4>
+                            <p class="text-center">
+                                <span class="very-small text-muted">Publié le {{ article.pubDate|date('d-m-Y') }}</span><br>
+                                <a href="{{ article.link }}" class="btn btn-sm btn-primary mt-3" target="_blank">Lire l'article</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

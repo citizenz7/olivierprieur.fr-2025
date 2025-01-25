@@ -1,0 +1,55 @@
+<section id="contact" class="py-4">
+    <div class="container py-5">
+        <div class="row">
+            <h2 class="h2 fw-bold border-bottom mb-5">Contact</h2>
+
+            <div class="col-lg-6 col-sm-12">
+                <h3>Réseaux sociaux</h3>
+                <div class="social-links">
+                    {% if user.linkedin %}
+                        <a href="{{ user.linkedin }}"><i class="fa-brands fa-linkedin"></i></a>
+                    {% endif %}
+                    {% if user.github %}
+                        <a href="{{ user.github }}"><i class="fa-brands fa-github"></i></a>
+                    {% endif %}
+                    {% if user.instagram %}
+                        <a href="{{ user.instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                    {% endif %}
+                    {% if user.youtube %}
+                        <a href="{{ user.youtube }}"><i class="fa-brands fa-youtube"></i></a>
+                    {% endif %}
+                </div>
+                <div class="mt-4 mb-4">
+                    <h3>Blog : citizenz.info</h3>
+                    <p>Je blog sur <a href="https://www.citizenz.info" target="_blank">citizenz.info</a> : blog Geek & Libre : Développement web, admin systèmes et serveurs, base de données, Docker, etc.</p>
+                </div>
+                <p>Vous pouvez me contacter par mail en utilisant le formulaire ci-contre. Je vous répondrai dans les plus brefs delais.</p>
+            </div>
+
+            <div class="col-lg-6 col-sm-12">
+                {% for message in app.flashes('sendmailsuccess') %}
+                    <app-flash type="success" message="{{ message }}"></app-flash>
+                {% endfor %}
+
+                {% for message in app.flashes('error') %}
+                    <app-flash type="error" message="{{ message }}"></app-flash>
+                {% endfor %}
+
+                {{ form_start(form) }}
+                    <div class="d-flex justify-content-between gap-3">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                {{ form_row(form.nom) }}
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                {{ form_row(form.email) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div>{{ form_row(form.message) }}</div>
+                    <div class="text-center">{{ form_row(form.captcha) }}</div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</section>

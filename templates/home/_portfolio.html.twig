@@ -1,0 +1,30 @@
+<section id="portfolio" class="py-5">
+    <div class="container">
+        <div class="row">
+            <h2 class="h2 fw-bold border-bottom mb-2">Portfolio</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for port in portfolios %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{ asset('uploads/img/portfolio/' ~ port.image) }}" class="card-img-top" style="height: 200px;" alt="{{ port.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ port.title }}</h5>
+                                <p class="card-text">{{ port.presentation|raw }}</p>
+                                <p>
+                                    <small class="text-muted">Technologies utilisées :
+                                        {% for tech in port.categories %}
+                                            {{ tech.title }}{% if loop.last %}{% else %}, {% endif %}
+                                        {% endfor %}
+                                    </small>
+                                </p>
+                                {% if port.url %}
+                                    <a href="{{ port.url }}" class="btn btn-primary" target="_blank">Voir le projet</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

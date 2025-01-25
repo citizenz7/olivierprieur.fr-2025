@@ -1,0 +1,31 @@
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="container">
+        <h3>{{ settings.siteName }}</h3>
+        <p>{{ settings.siteAbout|raw }}</p>
+        <div class="social-links">
+             {% if user.linkedin %}
+                <a href="{{ user.linkedin }}"><i class="fa-brands fa-linkedin"></i></a>
+            {% endif %}
+            {% if user.github %}
+                <a href="{{ user.github }}"><i class="fa-brands fa-github"></i></a>
+            {% endif %}
+            {% if user.instagram %}
+                <a href="{{ user.instagram }}"><i class="fa-brands fa-instagram"></i></a>
+            {% endif %}
+            {% if user.youtube %}
+                <a href="{{ user.youtube }}"><i class="fa-brands fa-youtube"></i></a>
+            {% endif %}
+        </div>
+        <div class="copyright">
+            <i class="fa-brands fa-creative-commons-zero"></i> CC0 {{ "now"|date("Y") }} <strong><span>{{ settings.siteName }}</span></strong> |
+            No Right Reserved
+        </div>
+        <div class="credits">
+            Images <a href="https://pixabay.com" target="_blank">pixabay.com</a> | 
+            Fait avec <span style="color: pink;">&hearts;</span> et <a href="https://symfony.com/"><i class="fab fa-symfony"></i></a> | 
+            v.{{ settings.siteVersion }} | 
+            <a href="{{ path('app_mentions') }}">Mentions légales</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->

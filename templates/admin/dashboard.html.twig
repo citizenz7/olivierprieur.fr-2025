@@ -1,0 +1,124 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{% block main %}
+
+{# {{ dump() }} #}
+
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="col border rounded text-center pt-2">
+            <h1 class="fw-bold h2">Tableau de Bord</h1>
+            <p>Depuis le menu de gauche, vous pouvez administrer et gérer toutes les sections du site.</p>
+        </div>
+    </div>
+</div>
+
+{# <div class="container-fluid">
+    <div class="row g-5">
+        <div class="col-lg-9 col-sm-12">
+            <h2 class="h4 border-bottom mb-3 fw-bold">Stats</h2>
+            <div class="row row-cols-1 row-cols-md-5 g-4 justify-content-center">
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Utilisateurs</h2>
+                            <h3 class="card-text h4">{{ users|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Chants</h2>
+                            <h3 class="card-text h4">{{ chants|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Cultes</h2>
+                            <h3 class="card-text h4">{{ offices|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Soirées louanges</h2>
+                            <h3 class="card-text h4">{{ louanges|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Réunions prière</h2>
+                            <h3 class="card-text h4">{{ prieres|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Manifestations</h2>
+                            <h3 class="card-text h4">{{ manifestations|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Documents</h2>
+                            <h3 class="card-text h4">{{ documents|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Vidéos</h2>
+                            <h3 class="card-text h4">{{ videos|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 bg-light shadow">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5">Services</h2>
+                            <h3 class="card-text h4">{{ services|length }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <h2 class="h4 border-bottom mb-3 fw-bold">Agenda</h2>
+                <div class="col">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-12 bg-light rounded py-3 px-4">
+            <h2 class="h5 border-bottom mb-3 fw-bold">Dernières modifications</h2>
+            <p class="fst-italic small">* Sauf User et Video</p>
+            <ul class="mb-5">
+                {% for log in logs %}
+                    <li class="small">
+                        {{ log.createdAt|date('d-m-Y') }} - {{ log.action }} {{ log.entity }} :
+                        <a href="{{ log.entity|replace({'à': 'a', 'é': 'e', 'è': 'e', 'ê': 'e', 'ô': 'o'})|lower }}s/{{ log.slug }}">{{ log.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <h2 class="h5 border-bottom mb-3 fw-bold">Dernier utilisateur inscrit</h2>
+            <ul class="mb-5">
+                <li>{{ lastUser }}</li>
+            </ul>
+            <h2 class="h5 border-bottom mb-3 fw-bold">Dernier chant ajouté</h2>
+            <ul class="mb-5">
+                <li><a href="{{ path('app_chant_show', {'slug': lastChant.slug}) }}">{{ lastChant }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div> #}
+
+{% endblock %}

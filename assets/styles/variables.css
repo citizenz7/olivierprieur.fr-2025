@@ -1,0 +1,23 @@
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #444444;
+    --border-color: #dee2e6;
+    --link: #ffb727;
+    --link-hover: #ffc85a;
+
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark: #333;
+    --color-light: #f1f1f1;
+
+    --color-subtitle: #eee;
+
+    --color-success: #28a745;
+    --color-error: #dc3545;
+
+    --body-font: 'Poppins', sans-serif;
+    --title-font: 'Raleway', sans-serif;
+    --title-big: 'Satisfy', cursive;
+}

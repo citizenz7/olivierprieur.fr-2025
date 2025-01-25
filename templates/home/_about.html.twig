@@ -1,0 +1,27 @@
+<section id="about" class="py-4">
+    <div class="container py-5">
+        <div class="row">
+            <h2 class="h2 fw-bold border-bottom mb-5">A propos</h2>
+            <div class="col-lg-7 col-sm-12">
+                <img src="{{ asset('uploads/img/me.jpg') }}" alt="Olivier Prieur" class="img-apropos">
+                <p class="small font-raleway">
+                    {{ user.aPropos|replace({'<div>': '', '</div>': '', '<p>': '', '</p>': '',})|raw }}
+                </p>
+            </div>
+            <div class="col-lg-5 col-sm-12">
+                <ul class="list-group list-group-flush small lh-lg">
+                    <li class="list-group-item"><i class="fa-solid fa-chevron-right link me-2"></i> Nom : Olivier Prieur</li>
+                    <li class="list-group-item"><i class="fa-solid fa-chevron-right link me-2"></i> Téléphone : 06.30.65.19.52</li>
+                    <li class="list-group-item"><i class="fa-solid fa-chevron-right link me-2"></i> Adresse : 57 rue de Marzy 58000 Nevers</li>
+                    <li class="list-group-item"><i class="fa-solid fa-chevron-right link me-2"></i> Status professionnel : 
+                        {% if user.status == true %}
+                            <span class="badge text-bg-primary">En poste</span>
+                        {% else %}
+                            <span class="badge text-bg-success">A l'écoute de nouvelles opportunités</span>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

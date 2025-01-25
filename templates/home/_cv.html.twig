@@ -1,0 +1,58 @@
+<!-- ======= My Resume Section ======= -->
+<section id="resume" class="py-5">
+    <div class="container">
+        <h2 class="h2 fw-bold border-bottom mb-4">Curriculum Vitae</h2>
+        <div class="text-center my-4">
+            <a href="{{ asset('uploads/files/' ~ user.cv) }}" class="btn btn-lg btn-warning px-5 mt-3">
+                Téléchargez mon CV .pdf
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+
+                <!-- FORMATION -->
+                <h3 class="resume-title">Formation</h3>
+
+                {% for formation in formations %}
+                    <div class="resume-item">
+                        <h4>{{ formation.title }}</h4>
+                        <h5>
+                            {{ formation.date|format_datetime(pattern="MMMM Y") }}
+                            {% if formation.dateEnd != null %}
+                                 à {{ formation.dateEnd|format_datetime(pattern="MMMM Y") }}
+                            {% endif %}
+                        </h5>
+                        <p><em>{{ formation.location }}</em></p>
+                        <div class="my-2">
+                            {{ formation.presentation|replace({'<div>': '', '</div>': '', '<p>': '', '</p>': '', '<br>': '',})|raw }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <!-- EXPERIENCE PRO -->
+            <div class="col-lg-6">
+                <h3 class="resume-title">Expérience professionnelle</h3>
+
+                {% for experience in experiences %}
+                    <div class="resume-item">
+                        <h4>{{ experience.title }}</h4>
+                        {% if experience.dateEnd == null %}
+                            <h5>Depuis {{ experience.date|format_datetime(pattern="MMMM Y") }}</h5>
+                        {% else %}
+                            <h5>{{ experience.date|format_datetime(pattern="MMMM Y") }} à {{ experience.dateEnd|format_datetime(pattern="MMMM Y") }}</h5>
+                        {% endif %}
+                        <div class="my-2">
+                            <em>{{ experience.location }}</em>
+                            {{ experience.presentation|replace({'<div>': '', '</div>': '', '<p>': '', '</p>': '', '<br>': '',})|raw }}
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+</section><!-- End My Resume Section -->

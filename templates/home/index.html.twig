@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{# {% block title %}Hello HomeController!{% endblock %} #}
+
+{% block importmap %}{{ importmap(['app', 'home']) }}{% endblock %}
+
+{% block body %}
+    {% include 'home/_hero.html.twig' %}
+    {% include 'home/_about.html.twig' %}
+    {% include 'home/_cv.html.twig' %}
+    {% include 'home/_portfolio.html.twig' %}
+    {% include 'home/_blog.html.twig' %}
+    {% include 'home/_contact.html.twig' %}
+{% endblock %}
