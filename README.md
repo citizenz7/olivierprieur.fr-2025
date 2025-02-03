@@ -18,26 +18,10 @@ Portfolio Olivier Prieur 2025
 * twig/intl-extra
 * ...
 
-### Users
-**Comptes Admin**
-* Login : citizenz7@protonmail.com
-* Password : 7KD6geu497GGr8Sf
-
-**Autres comptes**
-* Login : mumbly58@protonmail.com
-* Password : 9XZt2K9p65NdFn6e
-
 ### Fonts
 * Poppins (body)
 * Raleway (title)
 * Satisfy (gros titre)
-
-### Google Recapctha
-* GOOGLE_RECAPTCHA_SITE_KEY=6Lcm-3YqAAAAADX79DuqVwwnLrn6SeWZfii81AA4
-* GOOGLE_RECAPTCHA_SECRET_KEY=6Lcm-3YqAAAAAGpmn5vMOI3pnIfTBrleH0xNw3cl
-
-### Google analytics
-* GOOGLE_ANALYTICS_ID=G-GYZX1BBLNX
 
 ### Sweet Alert2
 `php bin/console importmap:require sweetalert2`
@@ -71,9 +55,9 @@ Portfolio Olivier Prieur 2025
 * ~~test formulaire de contact~~
 * ~~flash messages~~
 * ~~BO css~~
-* Sitemap - Ajouter sitemap dans robots.txt : `Sitemap: https://www.monsite.fr/sitemap.xml`
-* robots.txt
-* Google Analytics 4
+* ~~Sitemap - Ajouter sitemap dans robots.txt : `Sitemap: https://www.monsite.fr/sitemap.xml`~~
+* ~~robots.txt~~
+* ~~Google Analytics 4~~
 * Google Search Console + soumission sitemap
 * ~~Favicon~~
 * ~~Meta + données structurées schema.org~~
